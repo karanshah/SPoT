@@ -21,6 +21,9 @@
 		FC4606AA17F7E5FF00D63D5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC46068C17F7E5FF00D63D5C /* UIKit.framework */; };
 		FC4606B217F7E5FF00D63D5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC4606B017F7E5FF00D63D5C /* InfoPlist.strings */; };
 		FC4606B417F7E5FF00D63D5C /* SPoTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4606B317F7E5FF00D63D5C /* SPoTTests.m */; };
+		FC4606BF17F9094500D63D5C /* FlickrPhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4606BE17F9094500D63D5C /* FlickrPhotoTVC.m */; };
+		FC4606C417F90E8600D63D5C /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4606C317F90E8600D63D5C /* FlickrFetcher.m */; };
+		FC4606C717F90FEC00D63D5C /* LatestFlickrPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4606C617F90FEC00D63D5C /* LatestFlickrPhotosTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,13 @@
 		FC4606AF17F7E5FF00D63D5C /* SPoTTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SPoTTests-Info.plist"; sourceTree = "<group>"; };
 		FC4606B117F7E5FF00D63D5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC4606B317F7E5FF00D63D5C /* SPoTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPoTTests.m; sourceTree = "<group>"; };
+		FC4606BD17F9094500D63D5C /* FlickrPhotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoTVC.h; sourceTree = "<group>"; };
+		FC4606BE17F9094500D63D5C /* FlickrPhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoTVC.m; sourceTree = "<group>"; };
+		FC4606C117F90E8600D63D5C /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		FC4606C217F90E8600D63D5C /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		FC4606C317F90E8600D63D5C /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		FC4606C517F90FEC00D63D5C /* LatestFlickrPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestFlickrPhotosTVC.h; sourceTree = "<group>"; };
+		FC4606C617F90FEC00D63D5C /* LatestFlickrPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestFlickrPhotosTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +125,13 @@
 				FC46069717F7E5FF00D63D5C /* ImageViewAppDelegate.h */,
 				FC46069817F7E5FF00D63D5C /* ImageViewAppDelegate.m */,
 				FC46069A17F7E5FF00D63D5C /* Main.storyboard */,
+				FC4606BD17F9094500D63D5C /* FlickrPhotoTVC.h */,
+				FC4606BE17F9094500D63D5C /* FlickrPhotoTVC.m */,
+				FC4606C517F90FEC00D63D5C /* LatestFlickrPhotosTVC.h */,
+				FC4606C617F90FEC00D63D5C /* LatestFlickrPhotosTVC.m */,
 				FC46069D17F7E5FF00D63D5C /* ImageViewViewController.h */,
 				FC46069E17F7E5FF00D63D5C /* ImageViewViewController.m */,
+				FC4606C017F90E8600D63D5C /* FlickrFetcher */,
 				FC4606A017F7E5FF00D63D5C /* Images.xcassets */,
 				FC46068F17F7E5FF00D63D5C /* Supporting Files */,
 			);
@@ -150,6 +165,16 @@
 				FC4606B017F7E5FF00D63D5C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC4606C017F90E8600D63D5C /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FC4606C117F90E8600D63D5C /* FlickrAPIKey.h */,
+				FC4606C217F90E8600D63D5C /* FlickrFetcher.h */,
+				FC4606C317F90E8600D63D5C /* FlickrFetcher.m */,
+			);
+			path = FlickrFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC46069517F7E5FF00D63D5C /* main.m in Sources */,
+				FC4606BF17F9094500D63D5C /* FlickrPhotoTVC.m in Sources */,
 				FC46069F17F7E5FF00D63D5C /* ImageViewViewController.m in Sources */,
+				FC4606C417F90E8600D63D5C /* FlickrFetcher.m in Sources */,
+				FC4606C717F90FEC00D63D5C /* LatestFlickrPhotosTVC.m in Sources */,
 				FC46069917F7E5FF00D63D5C /* ImageViewAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
