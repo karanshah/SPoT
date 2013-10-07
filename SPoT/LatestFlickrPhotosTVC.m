@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
     self.photos = [FlickrFetcher stanfordPhotos];
-//    NSLog(@"Stanford Photos - %@", self.photos);
+    NSLog(@"Stanford Photos - %@", self.photos);
 }
 
 
