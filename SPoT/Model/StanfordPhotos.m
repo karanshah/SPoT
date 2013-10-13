@@ -28,7 +28,7 @@
         NSArray *tags = [[photoArray valueForKey:FLICKR_TAGS] componentsSeparatedByString:@" "];
         Photo *photo = [[Photo alloc] init];
         [photo setTitle:[photoArray valueForKey:FLICKR_PHOTO_TITLE]];
-        [photo setDescription:[photoArray valueForKey:FLICKR_PHOTO_DESCRIPTION]];
+        [photo setDescription:[photoArray valueForKeyPath:FLICKR_PHOTO_DESCRIPTION]];
         [photo setPhotoId:[photoArray valueForKey:FLICKR_PHOTO_ID]];
         NSURL *url = [FlickrFetcher urlForPhoto:photoArray format:FlickrPhotoFormatLarge];
         [photo setUrl:url];
