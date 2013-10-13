@@ -28,7 +28,7 @@
                     if ([segue.identifier isEqualToString:@"Show Category"]) {
                         if ([segue.destinationViewController respondsToSelector:@selector(setPhotos:)]) {
                             Photo *categoryPhoto = self.photos[indexPath.row];
-                            NSArray *categoryPhotos = [categoryPhoto.dictionary allValues];
+                            NSArray *categoryPhotos = [categoryPhoto getSortedDictionaryValues];
                             [segue.destinationViewController performSelector:@selector(setPhotos:) withObject:categoryPhotos];
                             [segue.destinationViewController setTitle:[self titleForRow:indexPath.row]];
                         }

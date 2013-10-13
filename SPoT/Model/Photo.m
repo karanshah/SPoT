@@ -16,4 +16,14 @@
 @synthesize dictionary = _dictionary;
 @synthesize url = _url;
 
+- (NSArray *) getSortedDictionaryValues {
+    NSArray *sortedValues = [NSArray array];
+    if(self.dictionary) {
+        NSMutableArray *unsortedValues = [[NSMutableArray alloc] initWithArray:[self.dictionary allValues]];
+        NSSortDescriptor *descriptors = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+        sortedValues = [unsortedValues sortedArrayUsingDescriptors:@[descriptors]];
+    }
+    return sortedValues;
+}
+
 @end

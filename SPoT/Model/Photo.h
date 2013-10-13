@@ -16,4 +16,6 @@
 @property (nonatomic, strong) NSDictionary *dictionary;
 @property (nonatomic, strong) NSURL *url;
 
+- (NSArray *) getSortedDictionaryValues;
+
 @end

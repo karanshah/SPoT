@@ -54,7 +54,12 @@
             }
         }
     }
-    self.spotArray = [spotDictionary allValues];
+    NSArray *sortedKeys = [[spotDictionary allKeys] sortedArrayUsingSelector: @selector(compare:)];
+    NSMutableArray *sortedValues = [NSMutableArray array];
+    for (NSString *key in sortedKeys)
+        [sortedValues addObject: [spotDictionary objectForKey: key]];
+    
+    self.spotArray = sortedValues;
 }
 
 @end
