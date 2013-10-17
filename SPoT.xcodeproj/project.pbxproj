@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC2EFC4B180A50B100A08F12 /* RecentFlickrPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EFC4A180A50B100A08F12 /* RecentFlickrPhotosTVC.m */; };
+		FC2EFC4E180A575000A08F12 /* RecentPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EFC4D180A575000A08F12 /* RecentPhotos.m */; };
 		FC46068917F7E5FF00D63D5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC46068817F7E5FF00D63D5C /* Foundation.framework */; };
 		FC46068B17F7E5FF00D63D5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC46068A17F7E5FF00D63D5C /* CoreGraphics.framework */; };
 		FC46068D17F7E5FF00D63D5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC46068C17F7E5FF00D63D5C /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC2EFC49180A50B100A08F12 /* RecentFlickrPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentFlickrPhotosTVC.h; sourceTree = "<group>"; };
+		FC2EFC4A180A50B100A08F12 /* RecentFlickrPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentFlickrPhotosTVC.m; sourceTree = "<group>"; };
+		FC2EFC4C180A575000A08F12 /* RecentPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentPhotos.h; path = Model/RecentPhotos.h; sourceTree = "<group>"; };
+		FC2EFC4D180A575000A08F12 /* RecentPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentPhotos.m; path = Model/RecentPhotos.m; sourceTree = "<group>"; };
 		FC46068517F7E5FF00D63D5C /* SPoT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPoT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC46068817F7E5FF00D63D5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FC46068A17F7E5FF00D63D5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,6 +154,8 @@
 				FC4606C617F90FEC00D63D5C /* LatestFlickrPhotosTVC.m */,
 				FC46069D17F7E5FF00D63D5C /* ImageViewViewController.h */,
 				FC46069E17F7E5FF00D63D5C /* ImageViewViewController.m */,
+				FC2EFC49180A50B100A08F12 /* RecentFlickrPhotosTVC.h */,
+				FC2EFC4A180A50B100A08F12 /* RecentFlickrPhotosTVC.m */,
 				FC4606C017F90E8600D63D5C /* FlickrFetcher */,
 				FC4606A017F7E5FF00D63D5C /* Images.xcassets */,
 				FC46068F17F7E5FF00D63D5C /* Supporting Files */,
@@ -199,6 +207,8 @@
 			children = (
 				FC6B42C517FBD4AD0029688D /* StanfordPhotos.h */,
 				FC6B42C617FBD4AD0029688D /* StanfordPhotos.m */,
+				FC2EFC4C180A575000A08F12 /* RecentPhotos.h */,
+				FC2EFC4D180A575000A08F12 /* RecentPhotos.m */,
 				FCE74B0918021C7500B98CD7 /* Photo.h */,
 				FCE74B0A18021C7500B98CD7 /* Photo.m */,
 			);
@@ -306,9 +316,11 @@
 				FC46069517F7E5FF00D63D5C /* main.m in Sources */,
 				FC6B42C717FBD4AD0029688D /* StanfordPhotos.m in Sources */,
 				FC6B42C417FBD30E0029688D /* StanfordFlickrPhotosTVC.m in Sources */,
+				FC2EFC4B180A50B100A08F12 /* RecentFlickrPhotosTVC.m in Sources */,
 				FCE74B0B18021C7500B98CD7 /* Photo.m in Sources */,
 				FC4606BF17F9094500D63D5C /* FlickrPhotoTVC.m in Sources */,
 				FC46069F17F7E5FF00D63D5C /* ImageViewViewController.m in Sources */,
+				FC2EFC4E180A575000A08F12 /* RecentPhotos.m in Sources */,
 				FC4606C417F90E8600D63D5C /* FlickrFetcher.m in Sources */,
 				FC670F111802625200E62BE3 /* StanfordFlickrPhotosInCategoryTVC.m in Sources */,
 				FC4606C717F90FEC00D63D5C /* LatestFlickrPhotosTVC.m in Sources */,

@@ -26,4 +26,25 @@
     return sortedValues;
 }
 
+- (id) initFromPropertyList:(id)plist
+{
+    self = [self init];
+    if (self) {
+        if ([plist isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resultDictionary = (NSDictionary *)plist;
+            _photoId = resultDictionary[PHOTO_ID];
+            _title = resultDictionary[PHOTO_TITLE];
+            _description = resultDictionary[PHOTO_DESCRIPTION];
+            NSString *urlStr = resultDictionary[PHOTO_URL];
+            _url = [[NSURL alloc] initWithString:urlStr];
+            if (!_photoId || !_title || !_url) self = nil;
+        }
+    }
+    return self;
+}
+
+- (id) asPropertyList {
+    return @{PHOTO_ID: self.photoId, PHOTO_TITLE: self.title, PHOTO_DESCRIPTION: self.description, PHOTO_URL: [self.url absoluteString]};
+}
+
 @end

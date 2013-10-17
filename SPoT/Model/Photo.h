@@ -10,6 +10,11 @@
 
 @interface Photo : NSObject
 
+#define PHOTO_ID @"PhotoId"
+#define PHOTO_TITLE @"PhotoTitle"
+#define PHOTO_DESCRIPTION @"PhotoDescription"
+#define PHOTO_URL @"PhotoUrl"
+
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *photoId;
@@ -17,5 +22,7 @@
 @property (nonatomic, strong) NSURL *url;
 
 - (NSArray *) getSortedDictionaryValues;
+- (id) initFromPropertyList:(id)plist;
+- (id) asPropertyList;
 
 @end

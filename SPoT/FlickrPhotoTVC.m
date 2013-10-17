@@ -7,7 +7,7 @@
 //
 
 #import "FlickrPhotoTVC.h"
-//#import "FlickrFetcher.h"
+#import "RecentPhotos.h"
 #import "Photo.h"
 @interface FlickrPhotoTVC ()
 
@@ -37,6 +37,7 @@
                         if ([segue.destinationViewController respondsToSelector:@selector(setImageURL:)]) {
         //                    NSURL *url = [FlickrFetcher urlForPhoto:self.photos[indexPath.row] format:FlickrPhotoFormatLarge];
                             Photo *categoryPhoto = self.photos[indexPath.row];
+                            [RecentPhotos synchronize:categoryPhoto];           //Synchronize Photo (add to recently viewed list)
                             [segue.destinationViewController performSelector:@selector(setImageURL:) withObject:categoryPhoto.url];
                             [segue.destinationViewController setTitle:[self titleForRow:indexPath.row]];
                         }

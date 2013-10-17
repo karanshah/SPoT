@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Jdc-35-cg4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1w8-rK-SQx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Latest Flickr PhotosTVC-->
+        <!--Recent Flickr PhotosTVC-->
         <scene sceneID="zdK-12-v9M">
             <objects>
-                <tableViewController id="Tv4-fn-moA" customClass="LatestFlickrPhotosTVC" sceneMemberID="viewController">
+                <tableViewController id="Tv4-fn-moA" customClass="RecentFlickrPhotosTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8cI-JD-GLd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="985" y="49"/>
         </scene>
-        <!--Stanford Flickr PhotosTVC-->
+        <!--Stanford Flickr PhotosTVC - SPoT-->
         <scene sceneID="e18-XS-A50">
             <objects>
                 <tableViewController id="Bf4-my-ngR" customClass="StanfordFlickrPhotosTVC" sceneMemberID="viewController">
@@ -122,11 +122,30 @@
                             <outlet property="delegate" destination="Bf4-my-ngR" id="wHI-cY-fqW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="shd-Ah-yzD"/>
+                    <navigationItem key="navigationItem" title="SPoT" id="shd-Ah-yzD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wak-ep-slZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558" y="-690"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="1yZ-1r-O4B">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="1w8-rK-SQx" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="q95-hf-0Yf">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Jdc-35-cg4" kind="relationship" relationship="viewControllers" id="sfB-LN-15M"/>
+                        <segue destination="RWk-il-Ygp" kind="relationship" relationship="viewControllers" id="4EF-Qw-o1r"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPZ-fD-Jzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-653" y="-272"/>
         </scene>
         <!--Stanford Flickr Photos In CategoryTVC-->
         <scene sceneID="PFg-c4-IWX">
@@ -208,6 +227,7 @@
         <scene sceneID="L20-ZI-k57">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RWk-il-Ygp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="PdV-1l-lMV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nlh-jW-vyf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -226,6 +246,7 @@
         <scene sceneID="8B4-q1-6Tk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jdc-35-cg4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="hBD-Ll-vWQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IxT-kE-mMb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
