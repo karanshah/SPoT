@@ -14,7 +14,9 @@
 
 + (NSArray *) allRecentPhotos {
     NSMutableArray *recentPhotos = [[NSMutableArray alloc] init];
-    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]) {
+    NSUserDefaults *settings = [[NSUserDefaults alloc] init];
+    NSArray *recentPhotoDictionary = [settings arrayForKey:ALL_RESULTS_KEY];
+    for (id plist in recentPhotoDictionary) {
         Photo *photo = [[Photo alloc] initFromPropertyList:plist];
         [recentPhotos addObject:photo];
     }
@@ -22,11 +24,20 @@
 }
 
 + (void) synchronize:(Photo *)photo {
-    NSMutableDictionary *mutableRecentPhotosFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] mutableCopy];
-    if (!mutableRecentPhotosFromUserDefaults) mutableRecentPhotosFromUserDefaults = [[NSMutableDictionary alloc] init];
-    mutableRecentPhotosFromUserDefaults[photo.photoId] = [photo asPropertyList];
-    [[NSUserDefaults standardUserDefaults] setObject:mutableRecentPhotosFromUserDefaults forKey:ALL_RESULTS_KEY];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSUserDefaults *settings = [[NSUserDefaults alloc] init];
+    NSMutableArray *recentPhotos = [settings mutableArrayValueForKey: ALL_RESULTS_KEY];
+    if (recentPhotos.count == 0) {
+        [recentPhotos addObject:[photo asPropertyList]];
+    } else {
+        [recentPhotos insertObject:[photo asPropertyList] atIndex:0];
+    }
+    //Remove the objects if its greater than 25 Items
+    while (recentPhotos.count > 25) {
+        [recentPhotos removeLastObject];
+    }
+    // Update user defaults
+    [settings setObject:[recentPhotos copy] forKey:ALL_RESULTS_KEY];
+    [settings synchronize];
 }
 
 @end
